@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Employee Data</h4>
+                        <p class="card-category"> Select Employee </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                   
+                                    <th>
+                                        First Name
+                                    </th>
+                                    <th>
+                                        Sur Name
+                                    </th>
+                                    <th>
+                                        Client Code
+                                    </th>
+                                    <th>
+                                        Customer Code
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </thead>
+                                <tbody *ngFor="let data of listOfData">
+                                    <tr>
+                                        <td>
+                                            {{data.firstName}}
+                                        </td>
+                                        <td>
+                                            {{data.surname}}
+                                        </td>
+                                      
+                                        <td >
+                                            {{data.clientCode}}           
+                                        </td>
+                                        <td >
+                                            {{data.customerCode}}           
+                                        </td>
+                                        <td >
+                                            <div>
+                                                <button style="margin-right: 5px !important;" mat-raised-button class=" button-size btn-sm btn-primary btn-block" (click)=showModal(data.id)>Pay</button>
+                                                <button mat-raised-button class="button-size btn-sm btn-info btn-block" (click)=navigateToPayment(data.clientCode)>Get Details</button>
+                                            </div>              
+                                        </td>
+                                    </tr>
+                            
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Payment Detail</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                   
+                                    <th>Payment Satus</th>
+                                    <th>Result</th>
+                                    <th>File Amount</th>
+                                    <th>Amount Multiplier</th>
+                                    <th>Employee Code</th>
+                                </thead>
+                                <tbody *ngFor="let data of listOfData">
+                                    <td *ngIf="data.paymentStatus == 1">Pending</td>
+                                    <td *ngIf="data.paymentStatus == 2">Failed</td>
+                                    <td *ngIf="data.paymentStatus == 3">Success</td>
+                                    <td>{{ data.result }}</td>
+                                    <td>{{ data.fileAmount }}</td>
+                                    <td *ngIf="data.amountMultiplier == 1">Rend</td>
+                                    <td *ngIf="data.amountMultiplier == 2">Cent</td>
+                                    <td>{{ data.employeeCode }}</td>
+                            
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
